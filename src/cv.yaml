@@ -1,0 +1,188 @@
+toc:
+  entries:
+    - anchor: professional
+      title: Employment History
+      icon: fa fa-building
+    - anchor: scholar
+      title: Education
+      icon: fa fa-graduation-cap
+    - anchor: certificates
+      title: Certificates
+      icon: fa fa-certificate
+    - anchor: extracurricular
+      title: Engagement
+      icon: fa-solid fa-people-group
+    - anchor: languages
+      title: Languages
+      icon: fa fa-comments
+    - anchor: references
+      title: References
+      icon: fa fa-sticky-note
+
+open_graph:
+  title: John Doe &ndash; Curriculum Vit&aelig;
+  description: |-
+    15 years of passion for AI-driven cybersecurity defense
+  url: https://cv.johndoe.dev
+  image: https://cv.johndoe.dev/media/photo.jpg
+
+personal:
+  name: John Doe
+  address: Single Street 707<br />02141 Cambridge
+  statement: |-
+    Social media specialist. Amateur coffee junkie. Freelance introvert. Certified travelaholic.
+  email: gerson1995@hotmail.com
+  phone: 01508 8789997
+  phone_int: "+4915088789997"
+  born: 14.03.1987 in Cambridge, Massachusetts
+  homepage: cv.johndoe.dev
+  github: johndoe
+skills:
+  title: Languages &amp; Frameworks
+  levels:
+    - time: "&gt; 5 years"
+      entries:
+        - skill: Arduino
+          icon: devicon-arduino-plain
+        - skill: CouchDB
+          icon: devicon-couchdb-plain
+        - skill: embedded
+          icon: devicon-embeddedc-plain
+        - skill: Java
+          icon: devicon-java-plain
+        - skill: TensorFlow
+          icon: devicon-tensorflow-original
+        - skill: Git
+          icon: devicon-git-plain
+    - time: "2&dash;5 years"
+      entries:
+        - skill: Kubernetes
+          icon: devicon-kubernetes-plain
+        - skill: Matlab
+          icon: devicon-matlab-plain
+    - time: "&lt; 2 years"
+      entries:
+        - skill: FileZilla
+          icon: devicon-filezilla-plain
+        - skill: Unreal Engine
+          icon: devicon-unrealengine-original
+        - skill: Perl
+          icon: devicon-perl-plain
+
+professional:
+  title: Employment History
+  entries:
+    - datespan: since 05/2019
+      company: Techo Solutions
+      location: Berlin
+      position: Computer Hardware Engineer
+      parts:
+        - sections:
+            - title: Product &bdquo;C-Spice&rdquo;
+              details:
+                - C-Spice is a simple data processing language that facilitates the processing
+                  of data via a complex set of data processing capabilities, enabling the
+                  automated manipulation of human activity on the fly via a complex
+                  set of automated tools
+            - title: Development &amp; Architecture
+              details:
+                - supervising text automation processing in ai systems
+                  with a single language-based engine and a single language implementation
+                  that allow for user-friendly GUI controls such as,
+                  ai-login, ai-login2, or ai-login3
+            - title: Responsibilities
+              details:
+                - leading a team of eight AI developers during the 2012 season
+                - Two of those were former college players, a freshman and sophomores
+                - The goal was to try and get these guys the ability to make up for the other ones
+                  they're not learning anymore
+                - In all, the teams were playing for just 14 dollars each at the time of
+                  the end of the year, although there were a couple of teams in contention
+
+    - datespan: 12/2016 &ndash; 05/2019
+      company: Big Star Markets
+      location: Bonn
+      position: Soil and Plant Scientist
+      parts:
+        - sections:
+            - title: Product &bdquo;Food printer&rdquo;
+              details:
+                - new approach in the field of 3d printing food leading to breakthrough
+                  innovation in industry
+                - material can deliver up to 20% more zinc, 20% more copper, 18% more iron
+                  and 10% more magnesium
+                - works together with the 3d printed food as a powerful food supplement
+                - completely biodegradable, which means that it just dissolves in the body in about 3 days
+            - title: Process deployment
+              details:
+                - Keeping track of soil gradients in a scientific experiment
+                - Studying the chemical composition of food materials in a critical phase
+                - Understanding of the composition of nutrients that are produced
+        - datespan: since 05/2019
+          title: Packaging supervisor
+
+scholar:
+  title: Education
+  entries:
+    - datespan: 04/2006 &ndash; 05/2011
+      title: Newman University, Bartley Green
+      parts:
+        - datespan: 09/2009 &ndash; 05/2011
+          title: M.Sc. Atomics Management
+          sections:
+            - title: Grade
+              detail: 1,9
+            - title: Major
+              detail: Typography, Film
+        - datespan: 04/2006 &ndash; 09/2009
+          title: B.Sc. Physics
+          sections:
+            - title: Grade
+              detail: 2,4
+            - title: Major
+              detail: Print, Webdesign
+
+certificates:
+  title: Certificates
+  entries:
+    - datespan: 06/2018
+      title: Content Marketing Certified
+      details:
+        - Hubspot Online Marketing
+    - datespan: 03/2016
+      title: Harvard CS50
+      details:
+        - Scratch
+        - Arrays
+        - Memory
+        - Flask
+
+extracurricular:
+  title: Extra-curricular activities
+  entries:
+    - datespan: 07/2009 &ndash; 10/2011
+      title: Record holder
+      details:
+        - Keeping track of student records and other documents
+        - Tracking all and event planning
+        - Registering each and every event in school's Event Tracker
+
+languages:
+  title: Languages und Interests
+  natural:
+    title: Natural Languages
+    entries:
+      - language: Portuguese
+        level: native
+      - language: Englisch
+        level: business fluent<br />
+          worked 3+ years in english spreaking companies
+      - language: Spanish
+        level: elementary
+  interests:
+    title: Interests
+    detail: poker and cards, wet shaving, flying
+
+references:
+  title: References
+  detail: References available on request.

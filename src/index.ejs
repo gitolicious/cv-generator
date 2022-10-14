@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html class="no-js" lang="de">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+
+    <title><%= personal.name %> &ndash; Curriculum Vit&aelig;</title>
+    <meta
+      name="description"
+      content="<%- open_graph.description %>"
+    />
+
+    <meta property="og:url" content="<%- open_graph.url %>" />
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="<%- open_graph.title %>" />
+    <meta property="og:description" content="<%- open_graph.description %>" />
+    <meta property="og:image" content="<%- open_graph.image %>" />
+
+    <meta name="robots" content="noindex,nofollow">
+
+    <!-- Font Awesome -->
+    <link
+      href="css/@fortawesome/fontawesome-free/css/all.min.css"
+      rel="stylesheet"
+    />
+    <script
+      src="js/@fortawesome/fontawesome-free/js/all.min.js"
+      crossorigin="anonymous"
+    ></script>
+    <!--script src="https://kit.fontawesome.com/7543f79cda.js" crossorigin="anonymous"></script-->
+    <!--<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">-->
+
+    <!-- DevIcons -->
+    <link href="css/devicon/devicon.min.css" rel="stylesheet" />
+    <!--link href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css" rel="stylesheet"-->
+
+    <!-- Bootstrap -->
+    <!--link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" /-->
+
+    <!-- Custom style -->
+    <link rel="stylesheet" type="text/css" href="css/cv.min.css" />
+    <link rel="stylesheet" type="text/css" media="print" href="css/print.min.css" />
+  </head>
+
+  <body data-bs-spy="scroll" data-bs-target="#navbar">
+    <div id="size-block" class="position-fixed d-none">
+      <div class="d-block d-sm-none">xs</div>
+      <div class="d-none d-sm-block d-md-none">sm</div>
+      <div class="d-none d-md-block d-lg-none">md</div>
+      <div class="d-none d-lg-block d-xl-none">lg</div>
+      <div class="d-none d-xl-block">xl</div>
+    </div>
+    <div id="navbar" class="navbar">
+      <ul class="nav nav-pills nav-stacked" role="tablist">
+        <% toc.entries.forEach(function(entry){ %>
+        <li class="nav-item">
+          <a class="nav-link" href="#<%- entry.anchor %>">
+            <span class="nav-description"><%- entry.title %> </span>
+            <em class="toc-icon <%- entry.icon %>" aria-hidden="true"></em>
+          </a>
+        </li>
+        <% }); %>
+      </ul>
+    </div>
+    <div id="content" class="container">
+      <div class="row">
+        <div class="col col-overview">
+          <div id="summary" class="row image-container">
+            <div class="col name-container">
+              <h1 id="name"><%- personal.name %></h1>
+            </div>
+          </div>
+
+          <div class="entries">
+            <div class="row entry">
+              <div class="col col-icon">
+                <em class="fa fa-user" aria-label="Kurzprofil"></em>
+              </div>
+              <div class="col col-text"><%- personal.statement %></div>
+            </div>
+
+            <div class="row entry">
+              <div class="col col-icon">
+                <em class="fa fa-home" aria-label="Adresse"></em>
+              </div>
+              <div class="col col-text"><%- personal.address %></div>
+            </div>
+
+            <div class="row entry">
+              <div class="col col-icon">
+                <em class="fa fa-envelope" aria-label="E-Mail"></em>
+              </div>
+              <div class="col col-text">
+                <a href="mailto:<%- personal.email %>"><%- personal.email %></a>
+              </div>
+            </div>
+
+            <div class="row entry">
+              <div class="col col-icon">
+                <em class="fa fa-mobile" aria-label="Telefon"></em>
+              </div>
+              <div class="col col-text">
+                <a href="tel:<%- personal.phone_int %>">
+                  <%- personal.phone %>
+                </a>
+              </div>
+            </div>
+
+            <div class="row entry">
+              <div class="col col-icon">
+                <em class="fa fa-asterisk" aria-label="Geboren"></em>
+              </div>
+              <div class="col col-text"><%- personal.born %></div>
+            </div>
+
+            <div class="row entry">
+              <div class="col col-icon">
+                <em class="fa fa-globe" aria-label="Web"></em>
+              </div>
+              <div class="col col-text">
+                <a href="https://<%- personal.homepage %>">
+                  <%- personal.homepage %>
+                </a>
+              </div>
+            </div>
+
+            <div class="row entry">
+              <div class="col col-icon">
+                <em class="devicon-github-plain" aria-label="Github"></em>
+              </div>
+              <div class="col col-text">
+                <a href="https://github.com/<%- personal.github %>"
+                  >github.com/<%- personal.github %></a
+                >
+              </div>
+            </div>
+
+            <div class="row entry">
+              <div class="col col-icon">
+                <em class="fa fa-laptop" aria-hidden="true"></em>
+              </div>
+              <div class="col col-text">
+                <div><%- skills.title %></div>
+                <% skills.levels.forEach(function(level){ %> <%- level.time %>
+                <ul class="skills-list">
+                  <% level.entries.forEach(function(entry){ %>
+                  <li>
+                    <em class="<%- entry.icon %>" aria-hidden="true"></em> <%-
+                    entry.skill %>
+                  </li>
+                  <% }); %>
+                </ul>
+                <% }); %>
+              </div>
+              <!-- col -->
+            </div>
+            <!-- row -->
+          </div>
+          <!-- entries -->
+        </div>
+        <!-- col-overview -->
+
+        <div class="col col-detail">
+          <div id="professional" class="chapter">
+            <div class="row chapter-heading">
+              <div class="col col-icon">
+                <em class="fa fa-building" aria-hidden="true"></em>
+              </div>
+              <div class="col col-text"><%- professional.title %></div>
+            </div>
+            <div class="row">
+              <div class="col col-text entries">
+                <% professional.entries?.forEach(function(entry){ %>
+                <div class="entry">
+                  <div class="entry-datespan"><%- entry.datespan %></div>
+                  <div>
+                    <span class="entry-title"> <%- entry.company %></span>
+                    &ndash; <span class="location"><%- entry.location %></span>
+                  </div>
+                  <div class="entry-subtitle"><%- entry.position %></div>
+
+                  <% entry.parts?.forEach(function(part){ %>
+                  <div class="part">
+                    <div class="part-datespan"><%- part.datespan %></div>
+                    <div>
+                      <span class="part-title"><%- part.title %></span>
+                    </div>
+                    <% part.sections?.forEach(function(section){ %>
+                    <div class="section">
+                      <div class="section-title">
+                        <%- section.title %><% if (section.title &&
+                        section.details) { %>:<% } %>
+                      </div>
+                      <div class="section-detail">
+                        <ul>
+                          <% section.details.forEach(function(detail){ %>
+                          <li><%- detail %></li>
+                          <% }); %>
+                        </ul>
+                      </div>
+                    </div>
+                    <!-- section -->
+                    <% }); %>
+                  </div>
+                  <!-- part -->
+                  <% }); %>
+                </div>
+                <!-- entry -->
+                <% }); %>
+              </div>
+              <!-- entries -->
+            </div>
+            <!-- row -->
+          </div>
+          <!-- chapter -->
+
+          <div id="scholar" class="chapter">
+            <div class="row chapter-heading">
+              <div class="col col-icon">
+                <em class="fa fa-graduation-cap" aria-hidden="true"></em>
+              </div>
+              <div class="col col-text"><%- scholar.title %></div>
+            </div>
+
+            <div class="row">
+              <div class="col col-text entries">
+                <% scholar.entries?.forEach(function(entry){ %>
+                <div class="entry">
+                  <div class="entry-datespan"><%- entry.datespan %></div>
+                  <div class="entry-title"><%- entry.title %></div>
+
+                  <% entry.parts?.forEach(function(part){ %>
+                  <div class="part">
+                    <div class="part-datespan"><%- part.datespan %></div>
+                    <div class="part-title"><%- part.title %></div>
+                    <% part.sections?.forEach(function(section){ %>
+                    <div>
+                      <span class="section-title">
+                        <%- section.title %><% if (section.title &&
+                        section.detail) { %>:<% } %>
+                      </span>
+                      <span class="section-detail"><%- section.detail %></span>
+                    </div>
+                    <% }); %>
+                  </div>
+                  <% }); %>
+                </div>
+                <!-- entry -->
+                <% }); %>
+              </div>
+              <!-- entries -->
+            </div>
+            <!-- row -->
+          </div>
+          <!-- chapter -->
+
+          <div id="certificates" class="chapter">
+            <div class="row chapter-heading">
+              <div class="col col-icon">
+                <em class="fa fa-certificate" aria-hidden="true"></em>
+              </div>
+              <div class="col col-text"><%- certificates.title %></div>
+            </div>
+
+            <div class="row">
+              <div class="col col-text entries">
+                <% certificates.entries?.forEach(function(entry){ %>
+                <div class="entry">
+                  <div class="entry-datespan"><%- entry.datespan %></div>
+                  <div class="entry-title"><%- entry.title %></div>
+                  <div>
+                    <div class="section-detail">
+                      <%- entry.detail %>
+                      <ul>
+                        <% entry.details?.forEach(function(detail){ %>
+                        <li><%- detail %></li>
+                        <% }); %>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+                <!-- entry -->
+                <% }); %>
+              </div>
+              <!-- entries -->
+            </div>
+            <!-- row -->
+          </div>
+          <!-- chapter -->
+
+          <div id="extracurricular" class="chapter">
+            <div class="row chapter-heading">
+              <div class="col col-icon">
+                <em class="fa-solid fa-people-group" aria-hidden="true"></em>
+              </div>
+              <div class="col col-text"><%- extracurricular.title %></div>
+            </div>
+
+            <div class="row">
+              <div class="col col-text entries">
+                <% extracurricular.entries?.forEach(function(entry){ %>
+                <div class="entry">
+                  <div class="entry-datespan"><%- entry.datespan %></div>
+                  <div class="entry-title"><%- entry.title %></div>
+                  <div class="section-detail"><ul>
+                    <% entry.details?.forEach(function(detail){ %>
+                    <li><%- detail %></li>
+                    <% }); %>
+                  </ul>
+                  </div>
+                </div>
+                <!-- entry -->
+                <% }); %>
+              </div>
+              <!-- entries -->
+            </div>
+            <!-- row -->
+          </div>
+          <!-- chapter -->
+
+          <div id="languages" class="chapter">
+            <div class="row chapter-heading">
+              <div class="col col-icon">
+                <em class="fa fa-comments" aria-hidden="true"></em>
+              </div>
+              <div class="col col-text"><%- languages.title %></div>
+            </div>
+
+            <div class="row">
+              <div class="col col-text entries">
+                <div class="entry">
+                  <div class="entry-datespan">
+                    <%- languages.natural.title %>
+                  </div>
+                  <% languages.natural.entries?.forEach(function(entry){ %>
+                  <div class="row row-narrow">
+                    <div class="col col-left"><%- entry.language %></div>
+                    <div class="col col-right"><%- entry.level %></div>
+                  </div>
+                  <% }); %>
+                </div>
+                <!-- entry -->
+
+                <div class="entry">
+                  <div class="row row-narrow">
+                    <div class="col col-left entry-datespan">
+                      <%- languages.interests.title %>
+                    </div>
+                    <div class="col col-right">
+                      <%- languages.interests.detail %>
+                    </div>
+                  </div>
+                  <!-- row -->
+                </div>
+                <!-- entry -->
+              </div>
+              <!-- entries -->
+            </div>
+            <!-- row -->
+          </div>
+          <!-- chapter -->
+
+          <div id="references" class="chapter">
+            <div class="row chapter-heading">
+              <div class="col col-icon">
+                <em class="fa fa-sticky-note" aria-hidden="true"></em>
+              </div>
+              <div class="col col-text"><%- references.title %></div>
+            </div>
+            <div class="row">
+              <div class="col-text">
+                <div class="section-detail"><%- references.detail %></div>
+              </div>
+            </div>
+          </div>
+          <!-- chapter -->
+
+          <div class="cv-link">
+            <a href="https://<%- personal.homepage %>"
+              >https://<%- personal.homepage %></a
+            >
+          </div>
+        </div>
+        <!-- col -->
+      </div>
+      <!-- row -->
+    </div>
+    <!-- container -->
+
+    <script src="js/jquery/dist/jquery.slim.min.js"></script>
+    <script src="js/bootstrap/dist/js/bootstrap.min.js"></script>
+    <!--script src="js/util.js"></script-->
+  </body>
+</html>

@@ -1,0 +1,106 @@
+@import "src/scss/cv.scss";
+
+$print-size-factor: 0.9;
+
+$font-size-base: 1rem; // 16px
+
+@media print {
+
+  * {
+    print-color-adjust: exact;
+    -webkit-print-color-adjust: exact;
+  }
+
+  @page {
+    width: 1100px;
+    size: A4 portrait;
+    /* margin: 20mm 35mm 20mm 35mm; */
+    margin: 0;
+    padding: 10px;
+  }
+
+  body{
+    box-shadow: inset 0 0 0 1000px black;
+  }
+
+  a[href]:after {
+    content: none;
+  }
+
+  a:link {
+    text-decoration: none !important;
+  }
+
+  #content {
+    background-color: $overview-bg-color !important;
+    box-shadow: none;
+  }
+
+  .section, .part:not(:has(.section)), .entry, #scholar .part {
+    page-break-inside: avoid;
+  }
+
+  .disabled * {
+    color: $gray-300 !important;
+  }
+
+  .entry-datespan {
+    color: $highlight-color !important;
+  }
+
+  .part-datespan {
+    color: $highlight-color !important;
+  }
+
+  .col-overview {
+    &, *, *:before, *:after {
+      color: $overview-color !important;
+
+      &, a, a:link {
+        color: $overview-color !important;
+      }
+    }
+
+    background-color: $overview-bg-color !important;
+  }
+
+  .col-detail {
+    background-color: $detail-bg-color !important;
+
+    .chapter {
+      background-color: $chapter-bg-color !important;
+      page-break-inside: avoid;
+    }
+
+    font-size: $font-size-base * $print-size-factor;
+
+    .col-icon, .chapter-heading {
+      font-size: $h2-font-size * $print-size-factor;
+      padding-bottom: 0;
+    }
+
+    #professional .entry {
+      padding: $spacer 0;
+    }
+
+    .entry-title {
+      font-size: $font-size-lg * $print-size-factor;
+    }
+
+  }
+
+  .image-container {
+    background-size: 100% auto !important;
+    background-color: $white !important;
+    background-image: url("../media/photo.jpg") !important;
+    background-repeat: no-repeat !important;
+    background-position-y: 30% !important;
+  }
+
+  .row-wide, .row-narrow {
+    .col-right {
+      margin-left: 0;
+    }
+  }
+
+}

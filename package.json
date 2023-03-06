@@ -12,7 +12,7 @@
     "jquery": "^3.6.3"
   },
   "devDependencies": {
-    "browser-sync": "^2.27.11",
+    "browser-sync": "^2.28.3",
     "del": "^7.0.0",
     "ejs": "^3.1.8",
     "get-google-fonts": "^1.2.2",

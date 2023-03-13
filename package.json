@@ -14,7 +14,7 @@
   "devDependencies": {
     "browser-sync": "^2.28.3",
     "del": "^7.0.0",
-    "ejs": "^3.1.8",
+    "ejs": "^3.1.9",
     "get-google-fonts": "^1.2.2",
     "gulp": "^4.0.2",
     "gulp-ejs": "^5.1.0",

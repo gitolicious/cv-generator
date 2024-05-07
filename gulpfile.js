@@ -122,7 +122,7 @@ gulp.task('ejs', () => gulp
 
 // other static files
 gulp.task('static', () => gulp
-  .src(['src/static/**/*.*'])
+  .src(['src/static/**/*.*'], { encoding: false })
   .pipe(gulp.dest('dist'))
   .pipe(browserSync.stream())
 )
